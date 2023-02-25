@@ -1,0 +1,5 @@
+Neutral 162 Porcentaje =  38.388625592417064
+Happy 61 Porcentaje =  14.454976303317535
+Sad 11 Porcentaje =  2.6066350710900474
+Surprise 27 Porcentaje =  6.398104265402843
+Angry 161 Porcentaje =  38.15165876777251
