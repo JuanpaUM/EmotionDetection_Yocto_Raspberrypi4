@@ -1,6 +1,6 @@
 # EmotionDetection_Yocto_Raspberrypi4
 
-## Esta imagen se realiza para una rasperrypi4, utilizando la versión dunfell de Poky
+## Este proyecto se realiza para una rasperrypi4, utilizando la versión dunfell de Poky
 
 ### A continuación se muestran los pasos a seguir para la configuración de la imagen:
 
