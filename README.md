@@ -40,21 +40,53 @@
        $ ~poky/build/conf
    
    Se modifican utilizando los archivos suministrados en la carpeta **"conf"**
- 
- 6. Se ingresar al entorno de construcción y luego crear una imagen Sato usando el comando:
+
+6. Se ingresar al entorno de construcción y luego crear una imagen Sato usando el comando:
  
         bitbake core-image-sato
   
- 7. Completando el proceso se procede a encontrar la imagen que utiliza la raspberrypi4 en su SD, que esta en la dirección:
+7. Completando el proceso se procede a encontrar la imagen que utiliza la raspberrypi4 en su SD, que esta en la dirección:
     
         $ ~/poky/build/tmp/deploy/images 
 
    Aqui se encuantra un archivo similar a:
    
-    core-image-sato-raspberrypi4-64-20230225183838.rootfs.rpi-sdimg
+        core-image-sato-raspberrypi4-64-20230225183838.rootfs.rpi-sdimg
    
- 8. Esta imagen final se debe realizar un "Flash SD card", utilizando herramientas como "Disk Image Writer" ó "balenaEtcher".
-  
+8. Esta imagen final se debe realizar un "Flash SD card", utilizando herramientas como "Disk Image Writer" ó "balenaEtcher".
+
+9. Realizado este proceso, se debe conectar la raspberrypi, con la respectiva SD, el cable HDMI hacia una pantalla asi como un teclado.
+
+10. Cuando haya iniciado se debe ir al siguiente directorio:
+
+        $ cd // 
+        $ cd usr/bin/PROYECTO 
+        
+- y Ejecutar el siguiente comando:
+
+        python3 DETECTOR.py
+
+#### Hasta aqui la aplicaion esta corriedo de manera local, para hacerlo de manera remota se deben seguir los siguientes pasos:
+
+11. Conectar la rasperrypi y la PC a la misma red.
+
+12. Revisar la ip de la raspberypi con el siguiente comando:
+
+        ifconfig eth0
+        
+13. Una vez que se sabe la ip se debe habilitar la comunicación **ssh** en la PC y verificar que este activo mediante los siguientes comandos:
+
+        sudo systemctl enable --now ssh
+        systemctl status ssh
+        
+12. Una vez habilitado se procede a realizar la comuniacion con la rasperrypi mediante el siguiente comando:
+
+        ssh root@<dirección_ip_raspberry> -X
+    
+    La Flag -X es para habilitar las ventanas X11
+
+Ya una vez que se logra establecer comunicación se puede retomar desde el paso 10 y asi correr el programa remotamente.
+
 ##       Archivos adicionales
 
 
