@@ -6,11 +6,11 @@
 
 1. Inicialmente se debe clonar poky utilizando:
 
- git clone https://github.com/yoctoproject/poky -b dunfell
+       git clone https://github.com/yoctoproject/poky -b dunfell
 
 2. Luego entrar al entorno de construcción con el siguiente comando desde la terminal de la carpeta poky:
 
- source oe-init-build-env
+       source oe-init-build-env
 
 3. Se utilizan los siguientes layers:
     - meta-openembedded
@@ -25,7 +25,7 @@
 
         git clone https://github.com/NobuoTsukamoto/meta-tensorflow-lite -b dunfell
         
-4. A esta carpeta se le debe agregar la carpeta **"meta-proyecto"**
+4. A esta carpeta se le debe agregar la carpeta sumunistrada, **"meta-proyecto"**
 
 ### La carpeta poky debe quedar similar a la siguiente imagen:
 
@@ -89,6 +89,23 @@ Ya una vez que se logra establecer comunicación se puede retomar desde el paso 
 
 ##       Archivos adicionales
 
+### Carpeta Training
+
+Posee los archivos para realizar el entrenamiento que utiliza el programa principal **DETECTOR.py** para realizar la detección de emociones, el programa **train_emotion_detection.py** realiza este entreno suministrando un archivo con formato de datos jerárquicos, y se necesita un archivo de formato FlatBuffer ya que es el que utiliza Tensor Flow lite para su detección, el archivo **convert_h5_to_tflite.py** se encarga de esta conversión.
+
+Dentro de la carpeta **Data** se encuentra el set de imágenes utilizado para realizar el entrenamiento con 5 categorias.
+
+### Carpeta Graph
+
+El archivo principal **DETECTOR.py** suministra dos archivos de texto, uno con las estadísticas en porcentajes y el otro con el total de las emociones detectadas.
+
+El programa **Graph.py** se encarga de realizar un gráfico que muestra la distrubucción de las emociones detectadas.
+
+Este archivo no se utiliza en la imagen de la raspberrypi, por que el proyecto esta pensado para conectarse remotamente a la misma, entonces lo ideal es que cuando se tienen las estadisticas utilizando Secure Copy Protocol (SCP) que es el protocolo utilizado por SSH para la transferencia de archivos, la PC se encargue de realizar este gráfico.
+
+El programa recibe argumentos entonces se debe correr con un comando similar a:
+
+    python3 Graph.py Total_23_50_38__26_10_2022.txt Total_23_50_38__26_10_2022.png
 
 
 
