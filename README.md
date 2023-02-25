@@ -95,6 +95,8 @@ Posee los archivos para realizar el entrenamiento que utiliza el programa princi
 
 Dentro de la carpeta ***Data*** se encuentra el set de imágenes utilizado para realizar el entrenamiento con 5 categorias.
 
+Los datos se pueden obtener de: *https://www.kaggle.com/datasets/ananthu017/emotion-detection-fer*
+
 ### Carpeta Graph
 
 El archivo principal **"DETECTOR.py"** suministra dos archivos de texto, uno con las estadísticas en porcentajes y el otro con el total de las emociones detectadas.
