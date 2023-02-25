@@ -37,21 +37,21 @@
    
    Estos se encuantran en:
    
-   ~poky/build/conf
+       $ ~poky/build/conf
    
    Se modifican utilizando los archivos suministrados en la carpeta **"conf"**
  
  6. Se ingresar al entorno de construcción y luego crear una imagen Sato usando el comando:
  
-  bitbake core-image-sato
+        bitbake core-image-sato
   
  7. Completando el proceso se procede a encontrar la imagen que utiliza la raspberrypi4 en su SD, que esta en la dirección:
     
-~/poky/build/tmp/deploy/images 
+        $ ~/poky/build/tmp/deploy/images 
 
    Aqui se encuantra un archivo similar a:
    
-core-image-sato-raspberrypi4-64-20230225183838.rootfs.rpi-sdimg
+    core-image-sato-raspberrypi4-64-20230225183838.rootfs.rpi-sdimg
    
  8. Esta imagen final se debe realizar un "Flash SD card", utilizando herramientas como "Disk Image Writer" ó "balenaEtcher".
   
