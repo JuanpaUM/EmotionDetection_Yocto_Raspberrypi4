@@ -17,6 +17,8 @@
 
         git clone https://github.com/NobuoTsukamoto/meta-tensorflow-lite -b dunfell
         
-2. A esta carpeta se le debe agregar la carpeta **meta-proyecto**
+2. A esta carpeta se le debe agregar la carpeta **"meta-proyecto"**
+
+### La carpeta poky debe quedar similar a la siguiente imagen:
 
 ![pokyTree](https://user-images.githubusercontent.com/79667174/221376419-7269a50a-c3d8-4b88-8a33-e3d42f919c31.png)
