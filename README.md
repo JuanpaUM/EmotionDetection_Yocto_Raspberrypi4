@@ -91,15 +91,15 @@ Ya una vez que se logra establecer comunicación se puede retomar desde el paso 
 
 ### Carpeta Training
 
-Posee los archivos para realizar el entrenamiento que utiliza el programa principal **DETECTOR.py** para realizar la detección de emociones, el programa **train_emotion_detection.py** realiza este entreno suministrando un archivo con formato de datos jerárquicos, y se necesita un archivo de formato FlatBuffer ya que es el que utiliza Tensor Flow lite para su detección, el archivo **convert_h5_to_tflite.py** se encarga de esta conversión.
+Posee los archivos para realizar el entrenamiento que utiliza el programa principal **"DETECTOR.py"** para realizar la detección de emociones, el programa **"train_emotion_detection.py"** realiza este entreno suministrando un archivo con formato de datos jerárquicos, y se necesita un archivo de formato FlatBuffer ya que es el que utiliza Tensor Flow lite para su detección, el archivo **"convert_h5_to_tflite.py"** se encarga de esta conversión.
 
-Dentro de la carpeta **Data** se encuentra el set de imágenes utilizado para realizar el entrenamiento con 5 categorias.
+Dentro de la carpeta ***Data*** se encuentra el set de imágenes utilizado para realizar el entrenamiento con 5 categorias.
 
 ### Carpeta Graph
 
-El archivo principal **DETECTOR.py** suministra dos archivos de texto, uno con las estadísticas en porcentajes y el otro con el total de las emociones detectadas.
+El archivo principal **"DETECTOR.py"** suministra dos archivos de texto, uno con las estadísticas en porcentajes y el otro con el total de las emociones detectadas.
 
-El programa **Graph.py** se encarga de realizar un gráfico que muestra la distrubucción de las emociones detectadas.
+El programa **"Graph.py"** se encarga de realizar un gráfico que muestra la distrubucción de las emociones detectadas.
 
 Este archivo no se utiliza en la imagen de la raspberrypi, por que el proyecto esta pensado para conectarse remotamente a la misma, entonces lo ideal es que cuando se tienen las estadisticas utilizando Secure Copy Protocol (SCP) que es el protocolo utilizado por SSH para la transferencia de archivos, la PC se encargue de realizar este gráfico.
 
